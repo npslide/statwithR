@@ -1,34 +1,23 @@
 ---
-title: "{{< var course_title >}}"
-format:
-  html:
-    include-before-body: helpers/remove-nav.html
-    include-after-body: helpers/remove-title.html
+css: index.css
 ---
 
-# 📑 Course Brief
+::: {.grid}
 
-**Focus:** the focus of this course is to learn stuff
+::: {.g-col-12}
+# 3342XXX <br> Research Methodology Biopharmaceutical Science
 
-**How:** hands-on learning
+#### Faculty of Pharmaceutical Sciences <br> Chulalongkorn University
+:::
 
-# 🎯 Learning Objectives
-
-- You will discover how to do X
-- Distinguish X from **X**
-- Practice how to put things _in italic_
-- Discover how to highlight `code` inline
-- Proceed to learn stuff
+::: {.g-col-12}
+# Course description
 
 
------------------
+# คำอธิบายรายวิชา	
 
-**Select Academic Year/Term:**
+:::
 
-<a href="/years/2023-2/index.html">
-  <button class="button-61">Res Meth 2023/2</button>
-</a>
+:::
 
-<a href="/years/2024/index.html">
-  <button class="button-61">Res Meth 2024</button>
-</a>
+
