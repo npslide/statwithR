@@ -1,0 +1,246 @@
+---
+title: "Introduction to Statistical Inference"
+subtitle: "Research Methodology Biopharmaceutical Science"
+author: Natapol Pornputtapong, PhD
+institute: Chulalongkorn University
+date: today # today | last-modified
+date-format: "DD MMM YYYY" # see https://momentjs.com/docs/#/displaying/format/
+pdf-engine: xelatex
+format:
+  rxquarto-revealjs:
+    self-contained: false # set to true to produce a single HTML file
+    transition: none # none | fade | slide | convex | concave | zoom
+    background-transition: none
+    scrollable: true
+---
+
+# PPDAC: A for Analysis
+
+# Statistical testing
+
+## Statistics ^[Wikipedia; Romijn, Jan-Willem (2014). "Philosophy of statistics". Stanford Encyclopedia of Philosophy.]
+
+discipline that concerns the collection, organization, analysis, interpretation and presentation of data
+
+## Statistic tools Family
+
+<br/><br/>
+
+```{mermaid}
+%%| echo: false
+
+graph TD
+  A[Statistics] --> B[Descriptive]
+  A --> C[Inferential]
+  A --> D[Bayesian]
+  A --> E[Statistical learning]
+  
+  B --> F[Central tendency]
+  B --> G[Distribution]
+  B --> H[Plot]
+
+  C --> I[T-test]
+  C --> J[ANOVA]
+
+  E --> K[AI]
+  E --> L[NN]
+```
+
+## Drug testing
+
+- 2 new pain killer, test in 10 persons that have pain.
+  - A: 8 of 10 get better.
+  - B: 9 of 10 get better.
+
+- 2 new pain killer, test in 100 persons that have pain.
+  - A: 70 of 100 get better.
+  - B: 79 of 100 get better.
+
+## Statistical inference
+
+<br/><br/>
+
+::: {.r-hstack}
+::: {style="backdrop-filter: blur(5px); box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .5); background-color: #99BC85; color: white; border-radius: 20px; text-align: center; aspect-ratio: 1 / 1;width: 200px; margin: auto;font-size: 2vw; margin: auto;"}
+Observe <br/> **Sample**
+:::
+
+::: {}
+**------>**
+:::
+
+
+::: {style="backdrop-filter: blur(5px); box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .5); background-color: #99BC85; color: white; border-radius: 20px; text-align: center; aspect-ratio: 1 / 1;width: 200px; margin: auto; font-size: 2vw"}
+Infer <br/> **Population**
+:::
+
+:::
+
+## Hypothesis testing: statistical inference
+
+1. Convert the **research hypothesis to null hypothesis** and try to disprove. The decide which test & tails to be used.
+2. decide on a **significance level** – the probability with which we are prepared to make a wrong decision if the null hypothesis is true.
+3. Experimental design & do data collection
+4. Perform **requirement check** then **Calculate p-value** 
+5. **Compare p-value** with a significance level then end up either accepting or rejecting the null hypothesis.
+6. Interpretation
+
+## State the hypothesis
+
+- Parameters
+  - mean $(\mu)$
+  - standard variation $(\sigma)$
+  - distribution
+- Alternative relationship
+  - not equal $(\neq)$ - two tail
+  - greater than $(\gt)$ - one tail
+  - lower than $(\lt)$ - one tail
+
+## Hypotheses
+
+<br/>
+
+| Null (not-sig: true) | Alternative (sig: true)|
+|:------------|:------------|
+| $\mu = 15$ | $\mu \neq 15$ |
+| $\mu \leq 15$ | $\mu \gt 15$ |
+| $\mu_1 = \mu_2$ | $\mu_1 \neq \mu_2$ |
+| $\mu_1 \geq \mu_2$ | $\mu_1 \lt \mu_2$ |
+| $\mu_1 = \mu_2 = \mu_3 ...$ | $\mu_1 \neq \mu_2, \mu_1 \neq \mu_3 ...$ |
+
+## Choose the test: Parametric and non-parametric
+
+:::: columns
+::: {.column width="50%"}
+
+**Parametric**
+
+- test based on parameterized distributions
+  - T-Test
+  - ANOVA
+- More strictness
+- Requirement check
+:::
+
+::: {.column width="50%"}
+
+**Non parametric**
+
+- not based on parameterized distributions
+  - Mann-Whitney
+  - Kruskal-Wallis
+- Less strictness
+- No requirement
+:::
+
+::::
+
+## Decide the significant level
+
+<br/>
+<br/>
+
+|| null hypothesis is true | null hypothesis is false |
+|----|-----------|------------|
+| accept null hypothesis | Good | Type II ($\beta$) error  |
+| reject null hypothesis | Type I ($\alpha$) error  | Good |
+
+## Choosing the test
+
+1. Choosing the test based on the hypothesis
+1. Decide on the significant level & collect the data
+1. Choose the parametric first
+1. Checking the assumption of the test
+1. Calculate p-value, confidence limit
+1. Accept or reject null hypothesis
+
+## P-Value
+
+```{r}
+#| echo: false
+
+
+# Load necessary libraries
+library(ggplot2)
+
+# Create data for normal distribution
+x <- seq(-3, 3, length=100)
+y <- dnorm(x)
+
+# Create a data frame
+data <- data.frame(x=x, y=y)
+
+# Observed data point
+observed_point <- 1.5
+
+# P-value area
+p_value_area <- seq(observed_point, 3, length=100)
+p_value_y <- dnorm(p_value_area)
+
+# Plotting
+ggplot(data=data) +
+  geom_line(aes(x=x, y=y), size=1) +
+  geom_vline(xintercept=c(-2.5), linetype="dashed") +
+  geom_vline(xintercept=c(2.5), linetype="dashed") +
+  annotate("text", x=-2.5-0.4,y=0.2,label="Very un-likely\nobservations") +
+  annotate("text", x=2.5+0.4,y=0.2,label="Very un-likely\nobservations") +
+  annotate("text", x=-0,y=max(y)+0.02,label="More likely observation") + 
+  geom_segment(aes(x = observed_point - .4 , y = dnorm(observed_point) - 0.08 , xend = observed_point - .05 , yend = dnorm(observed_point) - 0.12), arrow = arrow(length = unit(0.25,"cm")), color='red') + 
+  annotate("text", x = observed_point - .75 , y = dnorm(observed_point + 0.5) , label='Observed\ndata point', color='red') +
+  geom_area(aes(x=p_value_area, y=p_value_y), fill="green", alpha=0.5) +
+  annotate("text", x=observed_point + 0.25, y=0.05, label="P-value", color="black") +
+  xlab("Set of All Possible Results") +
+  ylab("Probability Density") +
+  theme(axis.text=element_blank(), axis.ticks=element_blank())
+```
+
+## Wrong interpretation of P-Value
+
+When the same hypothesis is tested in different studies; if P of Drug ‘A’ is smaller than drug ‘B’, then drug ‘A’ is more effective than drug ‘b’.
+
+## choosing Statistic Testing
+
+- **type of parameter**: mean, variance, distribution, proportion
+- **number of sample group**: one, two, more
+- **type of variable**: focus on continuous
+- **number of independent variable**: focus on one
+- **number of dependent variable**: focus on one
+- **parametric vs non parametric**
+
+## Testing of Mean 1 sample
+
+| normal ? | extra requirement| test to use |
+|---|--------|-------------|
+| yes | N/A | one sample T-Test of mean|
+| no | N/A | Mann-Whitney U |
+
+## Testing of Mean 2 samples
+
+| normal ? | extra requirement| test to use |
+|---|--------|-------------|
+| yes | sample pair| paired T-Test of mean |
+| no | sample pair| Wilcoxon signed rank test |
+| yes | equal variance | two sample T-Test of mean of equal variance |
+| yes | nonequal variance | two sample T-Test of mean of non equal variance |
+| no | N/A | Wilcoxon rank-sum test|
+
+## Testing of Mean more samples
+
+| normal ? | extra requirement| test to use |
+|---|--------|--------------|
+| yes | N/A | One-Way ANOVA |
+| no  | N/A | Kruskal-Wallis test |
+
+## Testing of Variance
+
+- Bartlett Test of Homogeneity of Variances
+
+## Testing of Distribution
+
+- Shapiro-Wilk test of normality
+
+## References
+
+-   https://sparkbyexamples.com/r-programming/select-rows-in-r/
+-   https://4va.github.io/biodatasci/
+-   https://bioconnector.github.io/
