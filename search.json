@@ -18,14 +18,14 @@
     "href": "materials/topic03/slides.html#library-installation",
     "title": "Statistical Inference practices",
     "section": "library installation",
-    "text": "library installation\n\ntidyverse\n\ntibble\ntribble\nreadr\ntidyr\ndplyr\n…\n\ntidymodels\n\ninfer"
+    "text": "library installation\n\ntidyverse\n\ntibble\ntribble\nreadr\ntidyr\ndplyr\n…\n\ntidymodels\n\ninfer\n\n\n\ninstall.packages(\"tidyverse\")\ninstall.packages(\"tidymodels\")"
   },
   {
     "objectID": "materials/topic03/slides.html#calling-library",
     "href": "materials/topic03/slides.html#calling-library",
     "title": "Statistical Inference practices",
     "section": "calling library",
-    "text": "calling library"
+    "text": "calling library\n\n\nShow the code\nlibrary(tidyverse)\nlibrary(tidymodels)"
   },
   {
     "objectID": "materials/topic03/slides.html#the-nhanes-data",
@@ -39,28 +39,28 @@
     "href": "materials/topic03/slides.html#import-data-to-tibbles",
     "title": "Statistical Inference practices",
     "section": "import data to tibbles",
-    "text": "import data to tibbles\n\n\n# A tibble: 5,000 × 32\n      id Gender   Age Race    Education MaritalStatus RelationshipStatus Insured\n   &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;         &lt;chr&gt;              &lt;chr&gt;  \n 1 62163 male      14 Asian   &lt;NA&gt;      &lt;NA&gt;          &lt;NA&gt;               Yes    \n 2 62172 female    43 Black   High Sch… NeverMarried  Single             Yes    \n 3 62174 male      80 White   College … Married       Committed          Yes    \n 4 62174 male      80 White   College … Married       Committed          Yes    \n 5 62175 male       5 White   &lt;NA&gt;      &lt;NA&gt;          &lt;NA&gt;               Yes    \n 6 62176 female    34 White   College … Married       Committed          Yes    \n 7 62178 male      80 White   High Sch… Widowed       Single             Yes    \n 8 62180 male      35 White   College … Married       Committed          Yes    \n 9 62186 female    17 Black   &lt;NA&gt;      &lt;NA&gt;          &lt;NA&gt;               Yes    \n10 62190 female    15 Mexican &lt;NA&gt;      &lt;NA&gt;          &lt;NA&gt;               Yes    \n# ℹ 4,990 more rows\n# ℹ 24 more variables: Income &lt;dbl&gt;, Poverty &lt;dbl&gt;, HomeRooms &lt;dbl&gt;,\n#   HomeOwn &lt;chr&gt;, Work &lt;chr&gt;, Weight &lt;dbl&gt;, Height &lt;dbl&gt;, BMI &lt;dbl&gt;,\n#   Pulse &lt;dbl&gt;, BPSys &lt;dbl&gt;, BPDia &lt;dbl&gt;, Testosterone &lt;dbl&gt;, HDLChol &lt;dbl&gt;,\n#   TotChol &lt;dbl&gt;, Diabetes &lt;chr&gt;, DiabetesAge &lt;dbl&gt;, nPregnancies &lt;dbl&gt;,\n#   nBabies &lt;dbl&gt;, SleepHrsNight &lt;dbl&gt;, PhysActive &lt;chr&gt;, PhysActiveDays &lt;dbl&gt;,\n#   AlcoholDay &lt;dbl&gt;, AlcoholYear &lt;dbl&gt;, SmokingStatus &lt;chr&gt;"
+    "text": "import data to tibbles\n\nnh &lt;- read_csv(file=\"nhanes.csv\")\nnh\n\n# A tibble: 5,000 × 32\n      id Gender   Age Race    Education MaritalStatus RelationshipStatus Insured\n   &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;         &lt;chr&gt;              &lt;chr&gt;  \n 1 62163 male      14 Asian   &lt;NA&gt;      &lt;NA&gt;          &lt;NA&gt;               Yes    \n 2 62172 female    43 Black   High Sch… NeverMarried  Single             Yes    \n 3 62174 male      80 White   College … Married       Committed          Yes    \n 4 62174 male      80 White   College … Married       Committed          Yes    \n 5 62175 male       5 White   &lt;NA&gt;      &lt;NA&gt;          &lt;NA&gt;               Yes    \n 6 62176 female    34 White   College … Married       Committed          Yes    \n 7 62178 male      80 White   High Sch… Widowed       Single             Yes    \n 8 62180 male      35 White   College … Married       Committed          Yes    \n 9 62186 female    17 Black   &lt;NA&gt;      &lt;NA&gt;          &lt;NA&gt;               Yes    \n10 62190 female    15 Mexican &lt;NA&gt;      &lt;NA&gt;          &lt;NA&gt;               Yes    \n# ℹ 4,990 more rows\n# ℹ 24 more variables: Income &lt;dbl&gt;, Poverty &lt;dbl&gt;, HomeRooms &lt;dbl&gt;,\n#   HomeOwn &lt;chr&gt;, Work &lt;chr&gt;, Weight &lt;dbl&gt;, Height &lt;dbl&gt;, BMI &lt;dbl&gt;,\n#   Pulse &lt;dbl&gt;, BPSys &lt;dbl&gt;, BPDia &lt;dbl&gt;, Testosterone &lt;dbl&gt;, HDLChol &lt;dbl&gt;,\n#   TotChol &lt;dbl&gt;, Diabetes &lt;chr&gt;, DiabetesAge &lt;dbl&gt;, nPregnancies &lt;dbl&gt;,\n#   nBabies &lt;dbl&gt;, SleepHrsNight &lt;dbl&gt;, PhysActive &lt;chr&gt;, PhysActiveDays &lt;dbl&gt;,\n#   AlcoholDay &lt;dbl&gt;, AlcoholYear &lt;dbl&gt;, SmokingStatus &lt;chr&gt;"
   },
   {
     "objectID": "materials/topic03/slides.html#view-tibbles",
     "href": "materials/topic03/slides.html#view-tibbles",
     "title": "Statistical Inference practices",
     "section": "view tibbles",
-    "text": "view tibbles"
+    "text": "view tibbles\n\nView(nh)"
   },
   {
     "objectID": "materials/topic03/slides.html#normality-test-shapiro-wilk-test-of-normality",
     "href": "materials/topic03/slides.html#normality-test-shapiro-wilk-test-of-normality",
     "title": "Statistical Inference practices",
     "section": "normality test: Shapiro-Wilk test of normality",
-    "text": "normality test: Shapiro-Wilk test of normality\n H_0 : data distribution = normal distribution   H_1 : data distribution \\neq normal distribution \n\n\n\n    Shapiro-Wilk normality test\n\ndata:  .\nW = 0.96682, p-value = 2.166e-07"
+    "text": "normality test: Shapiro-Wilk test of normality\n H_0 : data distribution = normal distribution   H_1 : data distribution \\neq normal distribution \n\nnh %&gt;% \n  filter(Diabetes==\"Yes\") %&gt;% \n  .$BMI  %&gt;% \n  shapiro.test\n\n\n    Shapiro-Wilk normality test\n\ndata:  .\nW = 0.96682, p-value = 2.166e-07"
   },
   {
     "objectID": "materials/topic03/slides.html#bartlett-test-of-homogeneity-of-variances",
     "href": "materials/topic03/slides.html#bartlett-test-of-homogeneity-of-variances",
     "title": "Statistical Inference practices",
     "section": "Bartlett Test of Homogeneity of Variances",
-    "text": "Bartlett Test of Homogeneity of Variances\n H_0 : Var_{diabetes} = Var_{nondiabetes}   H_1 : Var_{diabetes} \\neq Var_{nondiabetes} \n\n\n\n    Bartlett test of homogeneity of variances\n\ndata:  BMI by Diabetes\nBartlett's K-squared = 25.828, df = 1, p-value = 3.733e-07"
+    "text": "Bartlett Test of Homogeneity of Variances\n H_0 : Var_{diabetes} = Var_{nondiabetes}   H_1 : Var_{diabetes} \\neq Var_{nondiabetes} \n\nnh %&gt;% \n  filter(Age&gt;=18) %&gt;% \n  bartlett.test(BMI~Diabetes, data=.)\n\n\n    Bartlett test of homogeneity of variances\n\ndata:  BMI by Diabetes\nBartlett's K-squared = 25.828, df = 1, p-value = 3.733e-07"
   },
   {
     "objectID": "materials/topic03/slides.html#t-test-for-a-population-mean-variance-unknown",
@@ -74,21 +74,21 @@
     "href": "materials/topic03/slides.html#one-sample-t-test",
     "title": "Statistical Inference practices",
     "section": "one sample T Test",
-    "text": "one sample T Test\n H_0 : \\mu_{BMI_{diabetic}} = 25   H_1 : \\mu_{BMI_{diabetic}} \\neq 25 \n\n\n# A tibble: 1 × 7\n  statistic  t_df   p_value alternative estimate lower_ci upper_ci\n      &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1      32.8  3675 3.85e-207 two.sided       28.5     28.3     28.8"
+    "text": "one sample T Test\n H_0 : \\mu_{BMI_{diabetic}} = 25   H_1 : \\mu_{BMI_{diabetic}} \\neq 25 \n\nnh %&gt;% \n  filter(Age&gt;=18) %&gt;% \n  t_test(response = BMI, mu = 25)\n\n# A tibble: 1 × 7\n  statistic  t_df   p_value alternative estimate lower_ci upper_ci\n      &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1      32.8  3675 3.85e-207 two.sided       28.5     28.3     28.8"
   },
   {
     "objectID": "materials/topic03/slides.html#one-sample-t-test-inferiority-test",
     "href": "materials/topic03/slides.html#one-sample-t-test-inferiority-test",
     "title": "Statistical Inference practices",
     "section": "one sample T Test: inferiority test",
-    "text": "one sample T Test: inferiority test\n H_0 : \\mu_{BMI_{diabetic}} \\geq 25   H_1 : \\mu_{BMI_{diabetic}} &lt; 25 \n\n\n# A tibble: 1 × 7\n  statistic  t_df p_value alternative estimate lower_ci upper_ci\n      &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1      32.8  3675       1 less            28.5     -Inf     28.7"
+    "text": "one sample T Test: inferiority test\n H_0 : \\mu_{BMI_{diabetic}} \\geq 25   H_1 : \\mu_{BMI_{diabetic}} &lt; 25 \n\nnh %&gt;% \n  filter(Age&gt;=18) %&gt;% \n  t_test(response = BMI, mu = 25, alternative = \"less\")\n\n# A tibble: 1 × 7\n  statistic  t_df p_value alternative estimate lower_ci upper_ci\n      &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1      32.8  3675       1 less            28.5     -Inf     28.7"
   },
   {
     "objectID": "materials/topic03/slides.html#one-sample-t-test-superiority-test",
     "href": "materials/topic03/slides.html#one-sample-t-test-superiority-test",
     "title": "Statistical Inference practices",
     "section": "one sample T Test: superiority test",
-    "text": "one sample T Test: superiority test\n H_0 : \\mu_{BMI_{diabetic}} \\leq 25   H_1 : \\mu_{BMI_{diabetic}} &gt; 25 \n\n\n# A tibble: 1 × 7\n  statistic  t_df   p_value alternative estimate lower_ci upper_ci\n      &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1      32.8  3675 1.92e-207 greater         28.5     28.4      Inf"
+    "text": "one sample T Test: superiority test\n H_0 : \\mu_{BMI_{diabetic}} \\leq 25   H_1 : \\mu_{BMI_{diabetic}} &gt; 25 \n\nnh %&gt;% \n  filter(Age&gt;=18) %&gt;% \n  t_test(response = BMI, mu = 25, alternative = \"greater\")\n\n# A tibble: 1 × 7\n  statistic  t_df   p_value alternative estimate lower_ci upper_ci\n      &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1      32.8  3675 1.92e-207 greater         28.5     28.4      Inf"
   },
   {
     "objectID": "materials/topic03/slides.html#t-test-for-two-population-means-variances-unknown-but-equal",
@@ -102,7 +102,7 @@
     "href": "materials/topic03/slides.html#two-sample-t-test-equal-variance-two-tail",
     "title": "Statistical Inference practices",
     "section": "two sample T Test: equal variance, two-tail",
-    "text": "two sample T Test: equal variance, two-tail\n H_0 : \\mu_{BMI_{diabetic}} = \\mu_{BMI_{nondiabetic}}   H_1 : \\mu_{BMI_{diabetic}} \\neq \\mu_{BMI_{nondiabetic}} \n\n\n# A tibble: 1 × 7\n  statistic  t_df  p_value alternative estimate lower_ci upper_ci\n      &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1     -13.3  3674 2.88e-39 two.sided      -4.74    -5.45    -4.04"
+    "text": "two sample T Test: equal variance, two-tail\n H_0 : \\mu_{BMI_{diabetic}} = \\mu_{BMI_{nondiabetic}}   H_1 : \\mu_{BMI_{diabetic}} \\neq \\mu_{BMI_{nondiabetic}} \n\nnh %&gt;% \n  filter(Age&gt;=18) %&gt;% \n  t_test(formula = BMI~Diabetes, , var.equal=TRUE)\n\n# A tibble: 1 × 7\n  statistic  t_df  p_value alternative estimate lower_ci upper_ci\n      &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1     -13.3  3674 2.88e-39 two.sided      -4.74    -5.45    -4.04"
   },
   {
     "objectID": "materials/topic03/slides.html#t-test-for-two-population-means-variances-unknown-and-unequal",
@@ -116,70 +116,70 @@
     "href": "materials/topic03/slides.html#two-sample-t-test-not-equal-variance-two-tail",
     "title": "Statistical Inference practices",
     "section": "two sample T Test: not equal variance, two-tail",
-    "text": "two sample T Test: not equal variance, two-tail\n H_0 : \\mu_{BMI_{diabetic}} = \\mu_{BMI_{nondiabetic}}   H_1 : \\mu_{BMI_{diabetic}} \\neq \\mu_{BMI_{nondiabetic}} \n\n\n# A tibble: 1 × 7\n  statistic  t_df  p_value alternative estimate lower_ci upper_ci\n      &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1     -11.4  407. 3.08e-26 two.sided      -4.74    -5.56    -3.92"
+    "text": "two sample T Test: not equal variance, two-tail\n H_0 : \\mu_{BMI_{diabetic}} = \\mu_{BMI_{nondiabetic}}   H_1 : \\mu_{BMI_{diabetic}} \\neq \\mu_{BMI_{nondiabetic}} \n\nnh %&gt;% \n  filter(Age&gt;=18) %&gt;% \n  t_test(formula = BMI~Diabetes, , var.equal=FALSE)\n\n# A tibble: 1 × 7\n  statistic  t_df  p_value alternative estimate lower_ci upper_ci\n      &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1     -11.4  407. 3.08e-26 two.sided      -4.74    -5.56    -3.92"
   },
   {
     "objectID": "materials/topic03/slides.html#two-sample-t-test-not-equal-variance-one-tail",
     "href": "materials/topic03/slides.html#two-sample-t-test-not-equal-variance-one-tail",
     "title": "Statistical Inference practices",
     "section": "two sample T Test: not equal variance, one-tail",
-    "text": "two sample T Test: not equal variance, one-tail\n H_0 : \\mu_{BMI_{diabetic}} \\leq \\mu_{BMI_{nondiabetic}}   H_1 : \\mu_{BMI_{diabetic}} &gt; \\mu_{BMI_{nondiabetic}} \n\n\n# A tibble: 1 × 7\n  statistic  t_df  p_value alternative estimate lower_ci upper_ci\n      &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1      11.4  407. 1.54e-26 greater         4.74     4.06      Inf"
+    "text": "two sample T Test: not equal variance, one-tail\n H_0 : \\mu_{BMI_{diabetic}} \\leq \\mu_{BMI_{nondiabetic}}   H_1 : \\mu_{BMI_{diabetic}} &gt; \\mu_{BMI_{nondiabetic}} \n\nnh %&gt;% \n  filter(Age&gt;=18) %&gt;% \n  t_test(\n    formula = BMI~Diabetes, \n    alternative=\"greater\", \n    order = c(\"Yes\", \"No\"),\n    var.equal=FALSE\n  )\n\n# A tibble: 1 × 7\n  statistic  t_df  p_value alternative estimate lower_ci upper_ci\n      &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;\n1      11.4  407. 1.54e-26 greater         4.74     4.06      Inf"
   },
   {
     "objectID": "materials/topic03/slides.html#wilcoxon-rank-sum-test-a.k.a.-mann-whitney-u-test",
     "href": "materials/topic03/slides.html#wilcoxon-rank-sum-test-a.k.a.-mann-whitney-u-test",
     "title": "Statistical Inference practices",
     "section": "Wilcoxon rank-sum test (a.k.a. Mann-Whitney U test)",
-    "text": "Wilcoxon rank-sum test (a.k.a. Mann-Whitney U test)\n\n\n\n    Wilcoxon rank sum test with continuity correction\n\ndata:  BMI by Diabetes\nW = 366959, p-value &lt; 2.2e-16\nalternative hypothesis: true location shift is not equal to 0"
+    "text": "Wilcoxon rank-sum test (a.k.a. Mann-Whitney U test)\n\nnh %&gt;% \n  filter(Age&gt;=18) %&gt;% \n  wilcox.test(BMI~Diabetes, data=.)\n\n\n    Wilcoxon rank sum test with continuity correction\n\ndata:  BMI by Diabetes\nW = 366959, p-value &lt; 2.2e-16\nalternative hypothesis: true location shift is not equal to 0"
   },
   {
     "objectID": "materials/topic03/slides.html#comparing-bmi-among-race",
     "href": "materials/topic03/slides.html#comparing-bmi-among-race",
     "title": "Statistical Inference practices",
     "section": "comparing BMI among Race",
-    "text": "comparing BMI among Race\n\n\n[1] \"Asian\"    \"Black\"    \"White\"    \"Mexican\"  \"Hispanic\" \"Other\""
+    "text": "comparing BMI among Race\n\nnh$Race %&gt;% unique\n\n[1] \"Asian\"    \"Black\"    \"White\"    \"Mexican\"  \"Hispanic\" \"Other\""
   },
   {
     "objectID": "materials/topic03/slides.html#preparing-data",
     "href": "materials/topic03/slides.html#preparing-data",
     "title": "Statistical Inference practices",
     "section": "preparing data",
-    "text": "preparing data\n\n\n# A tibble: 4,681 × 32\n      id Gender   Age Race    Education MaritalStatus RelationshipStatus Insured\n   &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;fct&gt;   &lt;chr&gt;     &lt;chr&gt;         &lt;chr&gt;              &lt;chr&gt;  \n 1 62163 male      14 Asian   &lt;NA&gt;      &lt;NA&gt;          &lt;NA&gt;               Yes    \n 2 62172 female    43 Black   High Sch… NeverMarried  Single             Yes    \n 3 62174 male      80 Hispan… College … Married       Committed          Yes    \n 4 62174 male      80 Hispan… College … Married       Committed          Yes    \n 5 62175 male       5 Hispan… &lt;NA&gt;      &lt;NA&gt;          &lt;NA&gt;               Yes    \n 6 62176 female    34 Hispan… College … Married       Committed          Yes    \n 7 62178 male      80 Hispan… High Sch… Widowed       Single             Yes    \n 8 62180 male      35 Hispan… College … Married       Committed          Yes    \n 9 62186 female    17 Black   &lt;NA&gt;      &lt;NA&gt;          &lt;NA&gt;               Yes    \n10 62190 female    15 Mexican &lt;NA&gt;      &lt;NA&gt;          &lt;NA&gt;               Yes    \n# ℹ 4,671 more rows\n# ℹ 24 more variables: Income &lt;dbl&gt;, Poverty &lt;dbl&gt;, HomeRooms &lt;dbl&gt;,\n#   HomeOwn &lt;chr&gt;, Work &lt;chr&gt;, Weight &lt;dbl&gt;, Height &lt;dbl&gt;, BMI &lt;dbl&gt;,\n#   Pulse &lt;dbl&gt;, BPSys &lt;dbl&gt;, BPDia &lt;dbl&gt;, Testosterone &lt;dbl&gt;, HDLChol &lt;dbl&gt;,\n#   TotChol &lt;dbl&gt;, Diabetes &lt;fct&gt;, DiabetesAge &lt;dbl&gt;, nPregnancies &lt;dbl&gt;,\n#   nBabies &lt;dbl&gt;, SleepHrsNight &lt;dbl&gt;, PhysActive &lt;chr&gt;, PhysActiveDays &lt;dbl&gt;,\n#   AlcoholDay &lt;dbl&gt;, AlcoholYear &lt;dbl&gt;, SmokingStatus &lt;chr&gt;"
+    "text": "preparing data\n\nnhaov &lt;- nh %&gt;% \n  filter(Race!=\"Other\" & !is.na(Diabetes) & !is.na(BMI)) %&gt;% \n  mutate(\n    Race = factor(\n      Race, \n      labels = c(\"Asian\", \"Black\", \"White\", \"Mexican\", \"Hispanic\")\n    ),\n    Diabetes = factor(\n      Diabetes, \n      labels = c(\"Yes\", \"No\")\n    )\n  )\nnhaov\n\n# A tibble: 4,681 × 32\n      id Gender   Age Race    Education MaritalStatus RelationshipStatus Insured\n   &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;fct&gt;   &lt;chr&gt;     &lt;chr&gt;         &lt;chr&gt;              &lt;chr&gt;  \n 1 62163 male      14 Asian   &lt;NA&gt;      &lt;NA&gt;          &lt;NA&gt;               Yes    \n 2 62172 female    43 Black   High Sch… NeverMarried  Single             Yes    \n 3 62174 male      80 Hispan… College … Married       Committed          Yes    \n 4 62174 male      80 Hispan… College … Married       Committed          Yes    \n 5 62175 male       5 Hispan… &lt;NA&gt;      &lt;NA&gt;          &lt;NA&gt;               Yes    \n 6 62176 female    34 Hispan… College … Married       Committed          Yes    \n 7 62178 male      80 Hispan… High Sch… Widowed       Single             Yes    \n 8 62180 male      35 Hispan… College … Married       Committed          Yes    \n 9 62186 female    17 Black   &lt;NA&gt;      &lt;NA&gt;          &lt;NA&gt;               Yes    \n10 62190 female    15 Mexican &lt;NA&gt;      &lt;NA&gt;          &lt;NA&gt;               Yes    \n# ℹ 4,671 more rows\n# ℹ 24 more variables: Income &lt;dbl&gt;, Poverty &lt;dbl&gt;, HomeRooms &lt;dbl&gt;,\n#   HomeOwn &lt;chr&gt;, Work &lt;chr&gt;, Weight &lt;dbl&gt;, Height &lt;dbl&gt;, BMI &lt;dbl&gt;,\n#   Pulse &lt;dbl&gt;, BPSys &lt;dbl&gt;, BPDia &lt;dbl&gt;, Testosterone &lt;dbl&gt;, HDLChol &lt;dbl&gt;,\n#   TotChol &lt;dbl&gt;, Diabetes &lt;fct&gt;, DiabetesAge &lt;dbl&gt;, nPregnancies &lt;dbl&gt;,\n#   nBabies &lt;dbl&gt;, SleepHrsNight &lt;dbl&gt;, PhysActive &lt;chr&gt;, PhysActiveDays &lt;dbl&gt;,\n#   AlcoholDay &lt;dbl&gt;, AlcoholYear &lt;dbl&gt;, SmokingStatus &lt;chr&gt;"
   },
   {
     "objectID": "materials/topic03/slides.html#box-plot",
     "href": "materials/topic03/slides.html#box-plot",
     "title": "Statistical Inference practices",
     "section": "box plot",
-    "text": "box plot"
+    "text": "box plot\n\nnhaov  %&gt;% ggplot(data = ., # add the data\n       aes(x = Race, y = BMI, # set x, y coordinates\n           color = Race)) +    # color by treatment\n  geom_boxplot() +\n  facet_grid(~Diabetes) # create panes base on health status"
   },
   {
     "objectID": "materials/topic03/slides.html#summarize-by-group",
     "href": "materials/topic03/slides.html#summarize-by-group",
     "title": "Statistical Inference practices",
     "section": "summarize by group",
-    "text": "summarize by group\n\n\n# A tibble: 10 × 3\n   Race     Diabetes  mean\n   &lt;fct&gt;    &lt;fct&gt;    &lt;dbl&gt;\n 1 Asian    Yes       23.1\n 2 Asian    No        29.6\n 3 Black    Yes       26.7\n 4 Black    No        34.2\n 5 White    Yes       25.5\n 6 White    No        31.2\n 7 Mexican  Yes       25.7\n 8 Mexican  No        33.1\n 9 Hispanic Yes       26.2\n10 Hispanic No        32.4"
+    "text": "summarize by group\n\nnhaov %&gt;%   \n  group_by(Race, Diabetes) %&gt;%  \n  summarize(mean = mean(BMI)) %&gt;%\n  ungroup()\n\n# A tibble: 10 × 3\n   Race     Diabetes  mean\n   &lt;fct&gt;    &lt;fct&gt;    &lt;dbl&gt;\n 1 Asian    Yes       23.1\n 2 Asian    No        29.6\n 3 Black    Yes       26.7\n 4 Black    No        34.2\n 5 White    Yes       25.5\n 6 White    No        31.2\n 7 Mexican  Yes       25.7\n 8 Mexican  No        33.1\n 9 Hispanic Yes       26.2\n10 Hispanic No        32.4"
   },
   {
     "objectID": "materials/topic03/slides.html#analysis-of-varience",
     "href": "materials/topic03/slides.html#analysis-of-varience",
     "title": "Statistical Inference practices",
     "section": "Analysis of Varience",
-    "text": "Analysis of Varience\n H_0 : \\mu_{BMI_{Asian}} = \\mu_{BMI_{Black}} = \\mu_{BMI_{White}} = \\mu_{BMI_{Mexican}} = \\mu_{BMI_{Hispanic}} \n\n\n              Df Sum Sq Mean Sq F value  Pr(&gt;F)    \nRace           4   3073   768.2   14.77 5.4e-12 ***\nResiduals   4676 243242    52.0                    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1"
+    "text": "Analysis of Varience\n H_0 : \\mu_{BMI_{Asian}} = \\mu_{BMI_{Black}} = \\mu_{BMI_{White}} = \\mu_{BMI_{Mexican}} = \\mu_{BMI_{Hispanic}} \n\nnhaov %&gt;% \n  aov(BMI~Race, data=. ) %&gt;%\n  summary\n\n              Df Sum Sq Mean Sq F value  Pr(&gt;F)    \nRace           4   3073   768.2   14.77 5.4e-12 ***\nResiduals   4676 243242    52.0                    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1"
   },
   {
     "objectID": "materials/topic03/slides.html#post-hoc",
     "href": "materials/topic03/slides.html#post-hoc",
     "title": "Statistical Inference practices",
     "section": "Post-hoc",
-    "text": "Post-hoc\n\n\n  Tukey multiple comparisons of means\n    95% family-wise confidence level\n\nFit: aov(formula = BMI ~ Race, data = .)\n\n$Race\n                       diff        lwr         upr     p adj\nBlack-Asian       3.9219759  2.4796138  5.36433804 0.0000000\nWhite-Asian       2.3466776  0.7536502  3.93970506 0.0005662\nMexican-Asian     2.4801524  0.9783435  3.98196129 0.0000662\nHispanic-Asian    2.9519888  1.7168031  4.18717442 0.0000000\nWhite-Black      -1.5752983 -2.9248493 -0.22574724 0.0126602\nMexican-Black    -1.4418235 -2.6823805 -0.20126654 0.0132408\nHispanic-Black   -0.9699871 -1.8695622 -0.07041211 0.0270928\nMexican-White     0.1334748 -1.2794334  1.54638289 0.9990295\nHispanic-White    0.6053111 -0.5201057  1.73072795 0.5836171\nHispanic-Mexican  0.4718364 -0.5202607  1.46393347 0.6925947"
+    "text": "Post-hoc\n\nnhaov %&gt;% \n  aov(BMI~Race, data=. ) %&gt;%\n  TukeyHSD(which=\"Race\")\n\n  Tukey multiple comparisons of means\n    95% family-wise confidence level\n\nFit: aov(formula = BMI ~ Race, data = .)\n\n$Race\n                       diff        lwr         upr     p adj\nBlack-Asian       3.9219759  2.4796138  5.36433804 0.0000000\nWhite-Asian       2.3466776  0.7536502  3.93970506 0.0005662\nMexican-Asian     2.4801524  0.9783435  3.98196129 0.0000662\nHispanic-Asian    2.9519888  1.7168031  4.18717442 0.0000000\nWhite-Black      -1.5752983 -2.9248493 -0.22574724 0.0126602\nMexican-Black    -1.4418235 -2.6823805 -0.20126654 0.0132408\nHispanic-Black   -0.9699871 -1.8695622 -0.07041211 0.0270928\nMexican-White     0.1334748 -1.2794334  1.54638289 0.9990295\nHispanic-White    0.6053111 -0.5201057  1.73072795 0.5836171\nHispanic-Mexican  0.4718364 -0.5202607  1.46393347 0.6925947"
   },
   {
     "objectID": "materials/topic03/slides.html#tidy-post-hoc",
     "href": "materials/topic03/slides.html#tidy-post-hoc",
     "title": "Statistical Inference practices",
     "section": "tidy Post-hoc",
-    "text": "tidy Post-hoc\n\n\n# A tibble: 10 × 7\n   term  contrast         null.value estimate conf.low conf.high  adj.p.value\n   &lt;chr&gt; &lt;chr&gt;                 &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt;\n 1 Race  Black-Asian               0    3.92     2.48     5.36   0.0000000374\n 2 Race  White-Asian               0    2.35     0.754    3.94   0.000566    \n 3 Race  Mexican-Asian             0    2.48     0.978    3.98   0.0000662   \n 4 Race  Hispanic-Asian            0    2.95     1.72     4.19   0.0000000382\n 5 Race  White-Black               0   -1.58    -2.92    -0.226  0.0127      \n 6 Race  Mexican-Black             0   -1.44    -2.68    -0.201  0.0132      \n 7 Race  Hispanic-Black            0   -0.970   -1.87    -0.0704 0.0271      \n 8 Race  Mexican-White             0    0.133   -1.28     1.55   0.999       \n 9 Race  Hispanic-White            0    0.605   -0.520    1.73   0.584       \n10 Race  Hispanic-Mexican          0    0.472   -0.520    1.46   0.693"
+    "text": "tidy Post-hoc\n\nnhaov %&gt;% \n  aov(BMI~Race, data=. ) %&gt;%\n  TukeyHSD(which=\"Race\") %&gt;%\n  tidy\n\n# A tibble: 10 × 7\n   term  contrast         null.value estimate conf.low conf.high  adj.p.value\n   &lt;chr&gt; &lt;chr&gt;                 &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt;\n 1 Race  Black-Asian               0    3.92     2.48     5.36   0.0000000374\n 2 Race  White-Asian               0    2.35     0.754    3.94   0.000566    \n 3 Race  Mexican-Asian             0    2.48     0.978    3.98   0.0000662   \n 4 Race  Hispanic-Asian            0    2.95     1.72     4.19   0.0000000382\n 5 Race  White-Black               0   -1.58    -2.92    -0.226  0.0127      \n 6 Race  Mexican-Black             0   -1.44    -2.68    -0.201  0.0132      \n 7 Race  Hispanic-Black            0   -0.970   -1.87    -0.0704 0.0271      \n 8 Race  Mexican-White             0    0.133   -1.28     1.55   0.999       \n 9 Race  Hispanic-White            0    0.605   -0.520    1.73   0.584       \n10 Race  Hispanic-Mexican          0    0.472   -0.520    1.46   0.693"
   },
   {
     "objectID": "materials/topic03/slides.html#model",
@@ -221,21 +221,21 @@
     "href": "materials/topic03/slides.html#plot",
     "title": "Statistical Inference practices",
     "section": "plot",
-    "text": "plot"
+    "text": "plot\n\nnh %&gt;%\n  ggplot(aes(BMI, Age)) + \n  geom_point() + \n  geom_smooth(method = \"lm\", se = FALSE)"
   },
   {
     "objectID": "materials/topic03/slides.html#fitting",
     "href": "materials/topic03/slides.html#fitting",
     "title": "Statistical Inference practices",
     "section": "Fitting",
-    "text": "Fitting\n\n\n\nCall:\nlm(formula = BMI ~ Age, data = .)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-16.675  -4.742  -1.277   3.419  55.915 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 21.189645   0.187625  112.94   &lt;2e-16 ***\nAge          0.139813   0.004307   32.46   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 6.596 on 4832 degrees of freedom\n  (166 observations deleted due to missingness)\nMultiple R-squared:  0.179, Adjusted R-squared:  0.1789 \nF-statistic:  1054 on 1 and 4832 DF,  p-value: &lt; 2.2e-16"
+    "text": "Fitting\n\nnh %&gt;% \n  lm(BMI~Age , data=.) %&gt;% \n  summary\n\n\nCall:\nlm(formula = BMI ~ Age, data = .)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-16.675  -4.742  -1.277   3.419  55.915 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 21.189645   0.187625  112.94   &lt;2e-16 ***\nAge          0.139813   0.004307   32.46   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 6.596 on 4832 degrees of freedom\n  (166 observations deleted due to missingness)\nMultiple R-squared:  0.179, Adjusted R-squared:  0.1789 \nF-statistic:  1054 on 1 and 4832 DF,  p-value: &lt; 2.2e-16"
   },
   {
     "objectID": "materials/topic03/slides.html#model-diagnostics",
     "href": "materials/topic03/slides.html#model-diagnostics",
     "title": "Statistical Inference practices",
     "section": "Model Diagnostics",
-    "text": "Model Diagnostics"
+    "text": "Model Diagnostics\n\npar(mfrow = c(2, 2))\n\nnh %&gt;% lm(BMI~Age , data=.) %&gt;% plot"
   },
   {
     "objectID": "materials/topic03/slides.html#references",
